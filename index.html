@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <button id="myButton">&lg;</button>
+        <div id="bitem" class="bitem" />
+    </main>
+
+    <script>
+        document.getElementById('myButton').onclick = myFunction;
+        let cnt = 0;
+
+        function myFunction() {
+            const backImage = `url('back-${cnt++ % 17}.jpg')`;
+            var block = document.getElementById('bitem');
+            document.body.style.backgroundImage = backImage;
+            block.style.backgroundImage = backImage;
+        }
+
+    </script>
+</body>
+
+</html>
