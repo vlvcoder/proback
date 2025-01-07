@@ -4,15 +4,79 @@ body {
     overflow: hidden;
 }
 
-.bitem {
+button {
+    padding: 2px;
+    font-size: 2em;
+    background-color: transparent;
+    border-color: #f6f6f6;
+    border-radius: 5px;
+}
+
+@keyframes squaring {
+    from {
+        margin: calc((100vh - 550px) / 2) auto;
+        width: 500px;
+        height: 500px;
+        transform: rotate(0deg);
+        border-top-left-radius: 0;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 50%;
+    }
+
+    50% {
+        margin: calc((100vh - 100px) / 2) auto;
+        width: 0;
+        height: 0;
+        transform: rotate(180deg);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 0;
+    }
+
+    to {
+        margin: calc((100vh - 550px) / 2) auto;
+        width: 500px;
+        height: 500px;
+        transform: rotate(360deg);
+        border-top-left-radius: 0;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 50%;
+    }
+}
+
+.bitem-static {
+    background: url("back-trens.png") no-repeat;
+    background-size: 100% 100%;
+    border-radius: 20%;
+    box-shadow: 0px 0px 26px 3px rgba(34, 60, 80, 0.2) inset;
+    width: 500px;
+    height: 500px;
+    margin: calc((100vh - 550px) / 2) auto;
+}
+
+.bitem-dynamic {
+    animation-name: squaring;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+
+#bitem111111 {
     background: url("back-trens.png") no-repeat;
     background-size: 100% 100%;
     /* background-size: cover; */
 
-    /* border: 2px solid silver;
-    border-radius: 5px; */
+    /* border-radius: 20%; */
+    animation-name: squaring;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
 
-    border-radius: 20%;
     box-shadow: 0px 0px 26px 3px rgba(34, 60, 80, 0.2) inset;
     /* box-shadow: 0px 0px 26px 3px rgba(34, 60, 80, 0.6); */
     /* box-shadow: 0px 0px 26px 3px rgba(34, 60, 80, 0.6) inset; */

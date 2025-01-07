@@ -10,20 +10,42 @@
 
 <body>
     <main>
-        <button id="myButton">&lg;</button>
-        <div id="bitem" class="bitem" />
+        <button id="btnNext">&#9193;</button>
+        <span>&nbsp;&nbsp;&nbsp;</span>
+        <button id="btnShow">&#9210;</button>
+        <button id="btnRotate">&#128260;</button>
+        <div id="bitem" />
     </main>
 
     <script>
-        document.getElementById('myButton').onclick = myFunction;
         let cnt = 0;
+        var block = document.getElementById('bitem');
 
-        function myFunction() {
+        const nextBack = () => {
             const backImage = `url('back-${cnt++ % 17}.jpg')`;
-            var block = document.getElementById('bitem');
             document.body.style.backgroundImage = backImage;
             block.style.backgroundImage = backImage;
         }
+
+        const showBitem = () => {
+            if (!block.className) {
+                block.className = 'bitem-static';
+            } else {
+                block.className = '';
+            }
+        }
+
+        const rotateBitem = () => {
+            if (!block.className || block.className === 'bitem-static') {
+                block.className = 'bitem-static bitem-dynamic';
+            } else {
+                block.className = '';
+            }
+        }
+
+        document.getElementById('btnNext').onclick = nextBack;
+        document.getElementById('btnShow').onclick = showBitem;
+        document.getElementById('btnRotate').onclick = rotateBitem;
 
     </script>
 </body>
